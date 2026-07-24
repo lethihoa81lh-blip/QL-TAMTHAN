@@ -169,9 +169,7 @@ background:#fafafa;
     <th>STT</th>
 <th>Họ tên<br><input id="f_ten" onkeyup="locCot()"></th>
 <th>Năm sinh<br><input id="f_namsinh" onkeyup="locCot()"></th>
-    <th>Ngày nhập TT<br>
-<input id="f_ngaynhap" type="date" onchange="locCot()">
-</th>
+    <th>Ngày nhập TT<br><input id="f_ngaynhap" onkeyup="locCot()"></th>
 <th onclick="sapXepNha()">
 Nhà ⬍<br>
 <input id="f_nha" onkeyup="locCot()">
@@ -306,6 +304,7 @@ window.locCot = function () {
 
         return matchTen &&
             xuLy(p.namsinh).includes(xuLy(f_namsinh.value)) &&
+            xuLy(doiNgay(p.ngaynhap)).includes(xuLy(f_ngaynhap.value)) &&
             (f_nha.value.trim() === "" || xuLy(p.nha) === xuLy(f_nha.value)) &&
             xuLy(p.chandoan).includes(xuLy(f_cd.value)) &&
             xuLy(p.thuoc).includes(xuLy(f_thuoc.value)) &&
